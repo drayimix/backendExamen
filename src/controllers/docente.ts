@@ -2,13 +2,19 @@ import {  Request, Response } from 'express';
 import { where } from 'sequelize/types';
 
 import { Docente, DocenteI } from '../models/docente';
+import { Asignatura } from '../models/asignatura';
 
 export class DocenteController {
 
     public async getAllDocente(req: Request, res:Response){
         try {
-            const docente: DocenteI[] = await Docente.findAll(
-            ) // select * from clientes;
+            const docente: DocenteI[] = await Docente.findAll({
+                include: {
+                    model: Asignatura,
+                    as: 'asignatura',
+                    attributes: ['nameAsignatura']
+                }
+            })
             res.status(200).json({docente})
         } catch (error) {
             res.status(500).json({msg: "Error Internal"})
