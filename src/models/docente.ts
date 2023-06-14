@@ -8,6 +8,7 @@ export class Docente extends Model {
     public tipoVinculacion!: string;
     public programa!: string;
     public facultad!: string;
+    public asignaturaId!: number;
 }
 
 
@@ -16,6 +17,7 @@ export interface DocenteI {
     tipoVinculacion: string;
     programa: string;
     facultad: string;
+    asignaturaId: number;
 }
 
 Docente.init(

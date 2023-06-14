@@ -42,7 +42,8 @@ export class DocenteController {
             nombreDocente,
             tipoVinculacion,
             programa,
-            facultad
+            facultad,
+            asignaturaId
         }=req.body;
 
         try{
@@ -50,7 +51,8 @@ export class DocenteController {
                 nombreDocente,
                 tipoVinculacion,
                 programa,
-                facultad
+                facultad,
+                asignaturaId
             }
             const docente: DocenteI | null = await Docente.create({...body})
             res.status(200).json({docente})
@@ -66,7 +68,8 @@ export class DocenteController {
             nombreDocente,
             tipoVinculacion,
             programa,
-            facultad
+            facultad,
+            asignaturaId
         }=req.body;
 
         try{
@@ -74,7 +77,8 @@ export class DocenteController {
                 nombreDocente,
                 tipoVinculacion,
                 programa,
-                facultad
+                facultad,
+                asignaturaId
             }
 
             const docenteExist: DocenteI | null = await Docente.findByPk(pk);
