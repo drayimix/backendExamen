@@ -31,6 +31,7 @@ export class App {
     private routes() {
         this.routePrv.docenteRoutes.routes(this.app);
         this.routePrv.alumnoRoutes.routes(this.app);
+        this.routePrv.asignaturaRoutes.routes(this.app);
     }
 
 

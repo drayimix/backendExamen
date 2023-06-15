@@ -4,7 +4,7 @@ const DB_NAME = 'examen';
 
 const DB_USER = 'root';
 
-const DB_PASS = '12345678';
+const DB_PASS = '';
 
 
 
